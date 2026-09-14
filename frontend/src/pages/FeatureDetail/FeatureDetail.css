@@ -1,0 +1,208 @@
+/* ==========================================================================
+   PREMIUM FEATURE DETAIL PAGE STYLING
+   ========================================================================== */
+
+.feature-detail-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 25px;
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
+.feature-detail-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.feature-detail-icon-badge {
+    font-size: 54px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(79, 109, 245, 0.15);
+    border: 1px solid rgba(79, 109, 245, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-detail-icon-badge:hover {
+    transform: rotate(8deg) scale(1.05);
+}
+
+.feature-detail-header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.8px;
+}
+
+.feature-detail-subtitle {
+    color: #4b5563;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Glassmorphic Main Content Card */
+.feature-detail-content-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
+}
+
+.feature-detail-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+}
+
+/* Description Column */
+.feature-detail-desc h2,
+.feature-detail-highlights h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 18px 0;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 12px;
+}
+
+.feature-detail-desc p {
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 30px 0;
+}
+
+.feature-detail-cta {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #4f6df5 0%, #3b52c7 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 6px 20px rgba(79, 109, 245, 0.25);
+}
+
+.feature-detail-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(79, 109, 245, 0.4);
+}
+
+.feature-detail-cta:active {
+    transform: scale(0.98);
+}
+
+/* Highlights Column */
+.feature-detail-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-detail-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.feature-detail-highlights li:last-child {
+    margin-bottom: 0;
+}
+
+.check-icon {
+    background: #ecfdf5;
+    color: #059669;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* Back Button Container */
+.back-home-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-home-btn {
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    padding: 10px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-home-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #94a3b8;
+}
+
+.feature-not-found {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.feature-not-found h2 {
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.feature-not-found button {
+    padding: 12px 24px;
+    background: #4f6df5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .feature-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .feature-detail-header h1 {
+        font-size: 30px;
+    }
+}

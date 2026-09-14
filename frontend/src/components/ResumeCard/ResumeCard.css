@@ -1,0 +1,59 @@
+/* =========================================================
+   RESUME CARD — EXECUTIVE LIGHT GLASS
+   ========================================================= */
+
+.resume-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 28px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.resume-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.resume-card h2 {
+    margin: 0 0 16px;
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+}
+
+/* Info rows */
+.resume-card p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+    margin: 0;
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.5;
+    word-break: break-all;
+    flex: 1;
+}
+
+.resume-card p:last-of-type {
+    border-bottom: 0;
+}
+
+.resume-card p strong {
+    min-width: 85px;
+    color: #64748b;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}

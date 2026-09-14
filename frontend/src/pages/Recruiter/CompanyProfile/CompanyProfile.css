@@ -1,0 +1,428 @@
+.company-profile-container {
+
+    padding: 35px 45px 60px;
+
+    min-height: calc(100vh - 80px);
+
+    background: #f5f7fc;
+
+}
+
+
+.company-profile-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.company-profile-header h1 {
+
+    margin: 0;
+
+    font-size: 38px;
+
+    color: #18235c;
+
+}
+
+
+.company-profile-header p {
+
+    margin-top: 10px;
+
+    color: #667085;
+
+    font-size: 17px;
+
+}
+
+
+/* ==========================================
+   COMPANY PREVIEW
+========================================== */
+
+.company-preview {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.07);
+
+}
+
+
+.company-logo {
+
+    width: 78px;
+
+    height: 78px;
+
+    border-radius: 20px;
+
+    background: #4a55e8;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+
+.company-preview h2 {
+
+    margin: 0;
+
+    color: #18235c;
+
+    font-size: 26px;
+
+}
+
+
+.company-preview p {
+
+    margin: 7px 0;
+
+    color: #667085;
+
+}
+
+
+.company-preview span {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #e9f9ee;
+
+    color: #239447;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   FORM CARD
+========================================== */
+
+.company-profile-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.07);
+
+}
+
+
+.company-profile-card > h2 {
+
+    margin: 0 0 28px;
+
+    color: #18235c;
+
+    font-size: 24px;
+
+}
+
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group label {
+
+    color: #344054;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9deea;
+
+    border-radius: 11px;
+
+    padding: 13px 15px;
+
+    font-size: 15px;
+
+    color: #18235c;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+    font-family: inherit;
+
+}
+
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus {
+
+    border-color: #4a55e8;
+
+    box-shadow:
+        0 0 0 3px rgba(74, 85, 232, 0.10);
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+
+.full-width {
+
+    margin-top: 22px;
+
+}
+
+
+/* ==========================================
+   VERIFICATION
+========================================== */
+
+.verification-box {
+
+    margin-top: 28px;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    background: #f8f9fc;
+
+    border: 1px solid #e8eaf2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.verification-box strong {
+
+    color: #18235c;
+
+    font-size: 16px;
+
+}
+
+
+.verification-box p {
+
+    margin: 6px 0 0;
+
+    color: #667085;
+
+    font-size: 14px;
+
+}
+
+
+.verification-box span {
+
+    background: #fff5cc;
+
+    color: #9a7400;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   SAVE BUTTON
+========================================== */
+
+.save-company-btn {
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    background: #4a55e8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.save-company-btn:hover {
+
+    background: #3946d6;
+
+    transform: translateY(-1px);
+
+}
+
+
+.save-company-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.company-loading {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #4a55e8;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .company-profile-container {
+
+        padding: 25px 20px;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .company-preview {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .company-profile-header h1 {
+
+        font-size: 30px;
+
+    }
+
+}

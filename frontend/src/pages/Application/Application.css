@@ -1,0 +1,299 @@
+/* =========================================================
+   APPLICATION DETAILS — EXECUTIVE LIGHT ENTERPRISE STYLE
+   ========================================================= */
+
+.application-container {
+    max-width: 1100px;
+    margin: 20px auto 40px;
+    padding: 0 25px;
+}
+
+/* Header Overhaul */
+.application-header {
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+    padding: 32px 36px;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.18);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.application-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.application-header p {
+    color: #dbeafe;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Card Design */
+.application-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.application-card h2 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Job Details Layout */
+.job-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.job-details div {
+    background: #f8fafc;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-details strong {
+    color: #2563eb;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.job-details span {
+    color: #0f172a;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+/* Resume Info & Badges */
+.resume-info {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 14px;
+    column-gap: 16px;
+    align-items: center;
+}
+
+.resume-info p {
+    margin: 0;
+    font-size: 14.5px;
+    color: #0f172a;
+}
+
+.resume-info p strong {
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Interview Status */
+.interview-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.interview-status strong {
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.interview-status span {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+/* Feedback Summary */
+.feedback-summary {
+    background: #fdf4ff;
+    border-left: 4px solid #c026d3;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.feedback-summary p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #701a75;
+}
+
+.feedback-summary p:last-child {
+    margin-bottom: 0;
+}
+
+.feedback-summary strong {
+    color: #a21caf;
+    font-weight: 700;
+}
+
+/* Status Submission Card */
+.status-box {
+    margin: 15px 0 20px 0;
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Buttons */
+.interview-btn,
+.submit-btn {
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.interview-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
+}
+
+.interview-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+}
+
+.submit-btn:disabled {
+    background: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* AI Resume Analysis Specifics */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.analysis-item {
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 18px;
+    text-align: center;
+}
+
+.analysis-item h3 {
+    margin: 0 0 6px 0;
+    color: #64748b;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.analysis-item span {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+/* Skills */
+.skills-section {
+    margin-top: 20px;
+}
+
+.skills-section h3 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #64748b;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #bfdbfe;
+}
+
+@media (max-width: 768px) {
+    .job-details {
+        grid-template-columns: 1fr;
+    }
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,178 @@
+/* =========================================================
+   FEATURES — EXECUTIVE AI PLATFORM (LIGHT GLASS)
+   ========================================================= */
+
+.features {
+    padding: 110px 8% 100px;
+    background: #F1F5F9;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #E2E8F0;
+}
+
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+}
+
+.features-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── HEADER ───────────────────────────────────────── */
+
+.features-header {
+    text-align: center;
+    margin: 0 auto 60px;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #BFDBFE;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.features-badge .badge-sparkle {
+    font-size: 13px;
+    color: #2563EB;
+}
+
+.features-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 16px;
+    letter-spacing: -1.2px;
+    line-height: 1.18;
+}
+
+.features-gradient-text {
+    background: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.features-header p {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* ── 3-COLUMN GRID ────────────────────────────────── */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ── FEATURE CARD ─────────────────────────────────── */
+
+.feature-card {
+    position: relative;
+    background: #FFFFFF;
+    padding: 32px 28px;
+    border-radius: 18px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: #FFFFFF;
+    border-color: #93C5FD;
+    box-shadow: 
+        0 14px 35px rgba(37, 99, 235, 0.08),
+        0 0 20px rgba(99, 102, 241, 0.06);
+}
+
+/* ── ICON ─────────────────────────────────────────── */
+
+.feature-icon-wrapper {
+    margin-bottom: 20px;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2563EB;
+    font-size: 20px;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.1);
+    transition: all 0.25s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.feature-card h3 {
+    font-size: 18.5px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #0F172A;
+    letter-spacing: -0.4px;
+}
+
+.feature-card p {
+    color: #64748B;
+    line-height: 1.65;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .features-header h2 { font-size: 34px; }
+}
+
+@media (max-width: 680px) {
+    .features { padding: 80px 6% 60px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .features-header h2 { font-size: 28px; }
+    .features-header p { font-size: 14.5px; }
+}

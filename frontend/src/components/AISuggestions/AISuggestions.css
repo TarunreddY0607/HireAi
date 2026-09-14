@@ -1,0 +1,80 @@
+/* =========================================================
+   AI SUGGESTIONS — EXECUTIVE LIGHT GLASS
+   ========================================================= */
+
+.ai-suggestions,
+.ai-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 28px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.ai-suggestions:hover,
+.ai-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.ai-suggestions h2,
+.ai-card h2 {
+    margin: 0 0 16px;
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+}
+
+/* List */
+.ai-suggestions ul,
+.ai-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 1;
+}
+
+.ai-suggestions li,
+.ai-card li {
+    position: relative;
+    padding: 12px 14px 12px 38px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.ai-suggestions li::before,
+.ai-card li::before {
+    content: "✦";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #f59e0b;
+}
+
+.ai-suggestions li:hover,
+.ai-card li:hover {
+    transform: translateX(3px);
+    background: #ffffff;
+    border-color: #cbd5e1;
+}

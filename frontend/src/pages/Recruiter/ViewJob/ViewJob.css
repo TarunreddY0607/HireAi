@@ -1,0 +1,65 @@
+.view-job-container{
+
+    padding:30px;
+
+}
+
+.view-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.view-card h2{
+
+    color:#3154ff;
+
+    margin-bottom:20px;
+
+}
+
+.view-card p{
+
+    margin:12px 0;
+
+    font-size:17px;
+
+}
+
+.view-card h3{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+}
+
+.skills{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:15px;
+
+}
+
+.skills span{
+
+    background:#3154ff;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+}

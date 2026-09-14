@@ -1,0 +1,94 @@
+/* =========================================================
+   EDIT PROFILE — EXECUTIVE LIGHT ENTERPRISE STYLE
+   ========================================================= */
+
+.edit-profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+    color: #1e293b;
+}
+
+.edit-profile-container h1 {
+    color: #0f172a;
+    margin-bottom: 22px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.edit-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 650px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.edit-card label {
+    display: block;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.edit-card label:first-child {
+    margin-top: 0;
+}
+
+.edit-card input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 14.5px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.edit-card input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.edit-card input::placeholder {
+    color: #94a3b8;
+}
+
+.edit-card button {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transition: all 0.2s ease;
+}
+
+.edit-card button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.edit-card button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@media(max-width: 768px) {
+    .edit-card {
+        padding: 24px;
+    }
+}

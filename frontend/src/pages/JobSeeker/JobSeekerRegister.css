@@ -1,0 +1,504 @@
+/* =========================================================
+   JOB SEEKER REGISTER — EXECUTIVE SAAS AUTH STYLE
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+.job-register-page {
+    min-height: 100vh;
+    display: flex;
+    background: #f8fafc;
+}
+
+/* ================= LEFT PANEL ================= */
+
+.left-panel {
+    flex: 1;
+    color: #ffffff;
+    padding: 60px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.brand h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand span {
+    color: #93c5fd;
+}
+
+.robot {
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.badge {
+    display: inline-block;
+    width: max-content;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.4px;
+}
+
+.left-panel h2 {
+    font-size: 38px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.left-panel p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #dbeafe;
+    margin-bottom: 35px;
+    max-width: 520px;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.benefits div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.benefits div svg {
+    color: #86efac;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+    background: #f8fafc;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 38px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.register-card h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+    letter-spacing: -0.4px;
+}
+
+.register-card > p {
+    color: #64748b;
+    font-size: 13.5px;
+    margin-bottom: 24px;
+}
+
+/* Input Box */
+.input-box {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-box .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 42px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input-box input::placeholder {
+    color: #94a3b8;
+}
+
+.input-box .eye {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.input-box .eye:hover {
+    color: #2563eb;
+}
+
+/* Upload Box */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.upload-box:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.upload-box .upload-icon {
+    font-size: 32px;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.upload-box h3 {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.upload-box p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+.upload-box span {
+    font-size: 11px;
+    color: #2563eb;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.resume-file {
+    padding: 10px 14px;
+    background: #ecfdf5;
+    color: #059669;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border: 1px solid #a7f3d0;
+}
+
+/* Submit Button */
+.create-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+    color: #ffffff;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transition: all 0.2s ease;
+    margin-top: 4px;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 18px;
+    color: #64748b;
+    font-size: 13.5px;
+}
+
+.bottom-text a {
+    color: #2563eb;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.bottom-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    .job-register-page {
+        flex-direction: column;
+    }
+    .left-panel {
+        padding: 40px 30px;
+    }
+    .left-panel h2 {
+        font-size: 28px;
+    }
+    .right-panel {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================================
+   EMAIL OTP VERIFICATION MODAL
+   ========================================================= */
+
+.otp-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: otpFadeIn 0.25s ease-out;
+}
+
+@keyframes otpFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.otp-modal-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    position: relative;
+}
+
+.otp-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+    color: #2563eb;
+    font-size: 28px;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.12);
+}
+
+.otp-modal-header h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+    letter-spacing: -0.4px;
+}
+
+.otp-modal-header p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.otp-modal-header strong {
+    color: #1e293b;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.otp-error-banner {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.otp-input-wrap {
+    margin-bottom: 20px;
+}
+
+.otp-digit-input {
+    width: 100%;
+    padding: 16px;
+    font-size: 28px;
+    letter-spacing: 12px;
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 14px;
+    border: 2px solid #cbd5e1;
+    background: #f8fafc;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.otp-digit-input:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.otp-digit-input::placeholder {
+    letter-spacing: 8px;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.otp-verify-submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    transition: all 0.2s ease;
+}
+
+.otp-verify-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
+}
+
+.otp-verify-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.otp-modal-footer {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.resend-section {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.resend-btn:hover {
+    color: #1d4ed8;
+}
+
+.resend-countdown strong {
+    color: #2563eb;
+}
+
+.change-email-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.change-email-btn:hover {
+    color: #0f172a;
+    text-decoration: underline;
+}

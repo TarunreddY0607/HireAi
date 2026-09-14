@@ -1,0 +1,901 @@
+/* ==========================================
+   Admin Page
+========================================== */
+
+.admin-page {
+
+    min-height: 100vh;
+
+    padding: 35px;
+
+    background: #f5f7fb;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.admin-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+.admin-header h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #172033;
+
+}
+
+.admin-header p {
+
+    margin-top: 8px;
+
+    color: #687386;
+
+    font-size: 15px;
+
+}
+
+
+/* ==========================================
+   Header Actions & Logout
+========================================== */
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.company-count {
+
+    min-width: 100px;
+
+    padding: 12px 22px;
+
+    border-radius: 14px;
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #2563eb;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+}
+
+.company-count span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #7b8494;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+}
+
+.admin-logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #fecaca;
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.08);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.admin-logout-btn:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.admin-logout-btn svg {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.admin-logout-btn:hover svg {
+    transform: translateX(2px);
+}
+
+
+/* ==========================================
+   Companies Grid
+========================================== */
+
+.companies-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(380px, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* ==========================================
+   Company Card
+========================================== */
+
+.company-card {
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 30, 50, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+.company-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(20, 30, 50, 0.10);
+
+}
+
+
+/* ==========================================
+   Company Header
+========================================== */
+
+.company-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+.company-logo {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+
+}
+
+.company-logo.verified {
+    background: #eef4ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.company-logo.unverified {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.company-title {
+    flex: 1;
+}
+
+.company-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.company-title h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #172033;
+    transition: color 0.2s ease;
+}
+
+.company-title h2.company-name-verified {
+    color: #2563eb;
+}
+
+.company-title h2.company-name-unverified {
+    color: #dc2626;
+}
+
+.insta-verified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.insta-verified-svg {
+    filter: drop-shadow(0 2px 5px rgba(0, 149, 246, 0.45));
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.insta-verified-badge:hover .insta-verified-svg {
+    transform: scale(1.22);
+}
+
+.company-title span {
+    display: block;
+    margin-top: 5px;
+    color: #7b8494;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Verification Badge
+========================================== */
+
+.verification-badge {
+
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+.verification-badge.pending {
+
+    background: #fff7db;
+
+    color: #a36b00;
+
+}
+
+.verification-badge.verified {
+
+    background: #e8f8ef;
+
+    color: #15803d;
+
+}
+
+.verification-badge.rejected {
+
+    background: #ffe9e9;
+
+    color: #dc2626;
+
+}
+
+
+/* ==========================================
+   Details
+========================================== */
+
+.company-details {
+
+    border-top: 1px solid #edf0f4;
+
+    border-bottom: 1px solid #edf0f4;
+
+    padding: 15px 0;
+
+}
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 9px 0;
+
+}
+
+.detail-row span {
+
+    color: #7b8494;
+
+    font-size: 13px;
+
+}
+
+.detail-row strong {
+
+    color: #263246;
+
+    font-size: 13px;
+
+    text-align: right;
+
+    word-break: break-word;
+
+}
+
+.website-value-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    text-align: right;
+}
+
+.company-website-link {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    word-break: break-all;
+}
+
+.company-website-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.ext-icon {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.ai-verified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #eff6ff;
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.pill-check {
+    color: #0095f6;
+    font-size: 13px;
+}
+
+/* ==========================================
+   AI Website Verification Box
+========================================== */
+
+.ai-verification-box {
+    margin-top: 15px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+    border: 1px solid #c7d2fe;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04);
+}
+
+.ai-verification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.ai-badge-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ai-robot-icon {
+    color: #3b82f6;
+    font-size: 14px;
+}
+
+.trust-score-badge {
+    background: #10b981;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.ai-verification-note {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0f766e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ai-note-tick {
+    color: #0095f6;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.ai-summary-text {
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+}
+
+/* ==========================================
+   Admin No-Website / Warning Box
+========================================== */
+
+.admin-website-warning-box {
+    margin-top: 15px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef2f2 100%);
+    border: 1px solid #fecaca;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.05);
+}
+
+.warning-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.warning-badge-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #b91c1c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.warning-icon {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.unverified-tag {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.warning-box-detail p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #7f1d1d;
+}
+
+.warning-box-detail code {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.admin-verification-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 8px;
+    border: 1px solid #fde68a;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #451a03;
+}
+
+.tip-dot {
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   Website Badges & Wrappers
+========================================== */
+
+.no-website-text-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 12.5px;
+}
+
+.badge-icon-cross {
+    font-size: 12px;
+    color: #dc2626;
+}
+
+.placeholder-website-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.placeholder-link {
+    color: #ea580c !important;
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+.placeholder-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+    font-size: 10.5px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   Description
+========================================== */
+
+.company-description {
+
+    padding-top: 17px;
+
+}
+
+.company-description h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 15px;
+
+    color: #263246;
+
+}
+
+.company-description p {
+
+    margin: 0;
+
+    line-height: 1.6;
+
+    font-size: 13px;
+
+    color: #6b7586;
+
+}
+
+
+/* ==========================================
+   Rejection Reason
+========================================== */
+
+.rejection-box {
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #fff1f1;
+
+    border-left: 4px solid #ef4444;
+
+}
+
+.rejection-box strong {
+
+    color: #dc2626;
+
+    font-size: 13px;
+
+}
+
+.rejection-box p {
+
+    margin: 6px 0 0;
+
+    color: #6b3030;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.company-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+}
+
+.company-actions button {
+
+    flex: 1;
+
+    border: none;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+.company-actions button:hover {
+
+    transform: translateY(-1px);
+
+}
+
+.company-actions button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+.verify-btn {
+
+    background: #16a34a;
+
+    color: white;
+
+}
+
+.reject-btn {
+
+    background: #dc2626;
+
+    color: white;
+
+}
+
+
+/* ==========================================
+   Loading
+========================================== */
+
+.admin-loading {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.admin-loading h2 {
+
+    color: #4b5563;
+
+}
+
+
+/* ==========================================
+   Empty State
+========================================== */
+
+.empty-company {
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 18px;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+}
+
+.empty-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+
+}
+
+.empty-company h2 {
+
+    margin: 0;
+
+    color: #263246;
+
+}
+
+.empty-company p {
+
+    color: #7b8494;
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 700px) {
+
+    .admin-page {
+
+        padding: 20px;
+
+    }
+
+    .admin-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+    }
+
+    .admin-header-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .admin-header h1 {
+
+        font-size: 24px;
+
+    }
+
+    .companies-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .company-actions {
+
+        flex-direction: column;
+
+    }
+
+    .detail-row {
+
+        flex-direction: column;
+
+        gap: 3px;
+
+    }
+
+    .detail-row strong {
+
+        text-align: left;
+
+    }
+
+}

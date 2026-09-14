@@ -1,0 +1,707 @@
+/* =====================================================
+   POST JOB PAGE
+===================================================== */
+
+.post-job-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 35px 40px 60px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.post-job-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.post-job-header h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #18213b;
+
+}
+
+
+.post-job-header p {
+
+    margin: 10px 0 0;
+
+    color: #78829b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+
+.header-badge {
+
+    padding: 11px 18px;
+
+    border-radius: 30px;
+
+    background: #eef1ff;
+
+    color: #5268dc;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border: 1px solid #dce2ff;
+
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.post-job-form {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e8ebf3;
+
+    box-shadow:
+        0 12px 40px rgba(35, 45, 80, 0.08);
+
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+
+.form-group.full-width {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.form-group label {
+
+    margin-bottom: 9px;
+
+    color: #27314d;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.required-star {
+
+    color: #e05260;
+
+    margin-left: 4px;
+
+}
+
+
+/* =====================================================
+   INPUTS / SELECT
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce1eb;
+
+    background: #ffffff;
+
+    color: #20283d;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    height: 48px;
+
+    padding: 0 14px;
+
+}
+
+
+.form-group textarea {
+
+    min-height: 250px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #5b6ff5;
+
+    box-shadow:
+        0 0 0 4px rgba(91, 111, 245, 0.10);
+
+}
+
+
+/* =====================================================
+   DISABLED COMPANY INPUT
+===================================================== */
+
+.form-group input:disabled {
+
+    background: #f5f6fa;
+
+    color: #6e778d;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #a1a9ba;
+
+}
+
+
+/* =====================================================
+   SMALL HELP TEXT
+===================================================== */
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #858da1;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   SALARY / EXPERIENCE UNIT
+===================================================== */
+
+.input-with-unit {
+
+    display: flex;
+
+    width: 100%;
+
+}
+
+
+.input-with-unit input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    border-top-right-radius: 0 !important;
+
+    border-bottom-right-radius: 0 !important;
+
+}
+
+
+/* Unit box */
+
+.input-unit {
+
+    min-width: 72px;
+
+    padding: 0 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f0f3ff;
+
+    border: 1px solid #dce1eb;
+
+    border-left: none;
+
+    border-top-right-radius: 11px;
+
+    border-bottom-right-radius: 11px;
+
+    color: #5368d8;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.2s ease;
+
+}
+
+
+/* Focus unit */
+
+.input-with-unit:focus-within .input-unit {
+
+    border-color: #5b6ff5;
+
+    background: #e9edff;
+
+    color: #4359d2;
+
+}
+
+
+/* =====================================================
+   NUMBER INPUT
+===================================================== */
+
+.form-group input[type="number"] {
+
+    appearance: textfield;
+
+    -moz-appearance: textfield;
+
+}
+
+
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+
+    opacity: 1;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION FOOTER
+===================================================== */
+
+.description-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.description-footer small {
+
+    flex: 1;
+
+}
+
+
+.description-footer span {
+
+    color: #858da1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   AI BOX
+===================================================== */
+
+.ai-box {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px 20px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f3ff,
+            #f8f9ff
+        );
+
+    border: 1px solid #dce2ff;
+
+}
+
+
+.ai-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #e2e7ff;
+
+    font-size: 23px;
+
+}
+
+
+.ai-box strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #394cae;
+
+    font-size: 14px;
+
+}
+
+
+.ai-box p {
+
+    margin: 0;
+
+    color: #707991;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   POST BUTTON
+===================================================== */
+
+.post-job-btn {
+
+    grid-column: 1 / -1;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #526cf5,
+            #4057df
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(74, 94, 231, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.post-job-btn:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(74, 94, 231, 0.32);
+
+}
+
+
+.post-job-btn:active:not(:disabled) {
+
+    transform: translateY(0);
+
+}
+
+
+.post-job-btn:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+
+}
+
+
+/* =====================================================
+   SELECT ARROW
+===================================================== */
+
+.form-group select {
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   DATE INPUT
+===================================================== */
+
+.form-group input[type="date"] {
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .post-job-container {
+
+        padding: 25px;
+
+    }
+
+
+    .post-job-form {
+
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+
+    }
+
+
+    .form-group.full-width,
+    .ai-box,
+    .post-job-btn {
+
+        grid-column: 1;
+
+    }
+
+
+    .post-job-header {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .post-job-header h1 {
+
+        font-size: 27px;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .post-job-container {
+
+        padding: 20px 15px 40px;
+
+    }
+
+
+    .post-job-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .post-job-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .post-job-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .header-badge {
+
+        font-size: 12px;
+
+    }
+
+
+    .post-job-form {
+
+        padding: 20px;
+
+        border-radius: 16px;
+
+        gap: 18px;
+
+    }
+
+
+    .form-group textarea {
+
+        min-height: 220px;
+
+    }
+
+
+    .ai-box {
+
+        align-items: flex-start;
+
+    }
+
+
+    .post-job-btn {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible,
+.post-job-btn:focus-visible {
+
+    outline: 3px solid rgba(82, 108, 245, 0.18);
+
+    outline-offset: 2px;
+
+}

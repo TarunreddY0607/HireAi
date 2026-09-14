@@ -1,0 +1,57 @@
+/* =========================================================
+   STAT CARD — EXECUTIVE LIGHT GLASS
+   ========================================================= */
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.07);
+}
+
+/* Top accent bar on cards */
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4f46e5, #2563eb);
+    opacity: 0.8;
+}
+
+/* Label */
+.stat-card h3,
+.stat-card-label {
+    margin: 0;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* Value */
+.stat-card h1,
+.stat-card-value {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #0f172a;
+    line-height: 1.1;
+}

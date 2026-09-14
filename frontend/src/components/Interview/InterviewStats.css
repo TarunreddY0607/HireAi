@@ -1,0 +1,38 @@
+/* =========================================================
+   INTERVIEW STATS — EXECUTIVE LIGHT GLASS
+   ========================================================= */
+
+.interview-stats {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    width: 320px;
+}
+
+.interview-stats h2 {
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    color: #475569;
+}
+
+.stat:last-child {
+    border-bottom: none;
+}
+
+.stat strong {
+    color: #0f172a;
+    font-weight: 700;
+}
