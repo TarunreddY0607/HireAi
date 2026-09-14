@@ -27,24 +27,20 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Frontend Dependencies & Build
+      - name: Install Frontend Dependencies & Build Web App
         run: |
           cd frontend
           npm install --legacy-peer-deps
           npm run build
-
-      - name: Add Capacitor & Build Android
-        run: |
-          cd frontend
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init HireAi com.hireai.app --web-dir dist
-          npx cap add android
           npx cap sync android
-          cd android
-          chmod +x ./gradlew
-          ./gradlew assembleDebug --stacktrace
 
-      - name: Upload APK Artifact
+      - name: Build Android APK
+        run: |
+          cd frontend/android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK Download Link Artifact
         uses: actions/upload-artifact@v4
         with:
           name: HireAi-Debug-APK

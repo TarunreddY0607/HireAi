@@ -1,0 +1,6 @@
+{
+  "appId": "com.hireai.app",
+  "appName": "HireAi",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
