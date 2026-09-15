@@ -66,9 +66,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.0.2
-          name: "HireAi Android App v1.0.2"
-          body: "Official Android APK connected to live public backend tunnel (https://wife-romp-down.ngrok-free.dev). Download `HireAi.apk` below."
+          tag_name: v1.0.3
+          name: "HireAi Android App v1.0.3"
+          body: "HireAi Android APK with In-App Auto-Updater and enhanced mobile responsive UI. Download `HireAi.apk` below."
           files: frontend/android/app/build/outputs/apk/debug/HireAi.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

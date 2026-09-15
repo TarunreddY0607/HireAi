@@ -1,0 +1,192 @@
+/* =========================================================
+   IN-APP AUTO UPDATER MODAL (MODERN GLASS)
+   ========================================================= */
+
+.updater-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: updaterFadeIn 0.3s ease forwards;
+}
+
+.updater-modal {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: updaterScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.updater-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    padding: 28px 24px 22px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.updater-icon-badge {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.updater-header h3 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.updater-header p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+    color: #e0e7ff;
+}
+
+.updater-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.version-pill-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #f8fafc;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.version-current {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.version-arrow {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.version-new {
+    font-size: 13px;
+    font-weight: 700;
+    color: #10b981;
+    background: #ecfdf5;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #a7f3d0;
+}
+
+.updater-notes-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    max-height: 130px;
+    overflow-y: auto;
+}
+
+.updater-notes-box h5 {
+    margin: 0 0 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #475569;
+    letter-spacing: 0.5px;
+}
+
+.updater-notes-box p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #64748b;
+    white-space: pre-line;
+}
+
+.updater-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.btn-update-now {
+    flex: 2;
+    padding: 13px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+    transition: all 0.2s ease;
+}
+
+.btn-update-now:hover {
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-update-now:active {
+    transform: scale(0.97);
+}
+
+.btn-update-later {
+    flex: 1;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-update-later:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.btn-update-later:active {
+    transform: scale(0.97);
+}
+
+@keyframes updaterFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes updaterScaleUp {
+    from { opacity: 0; transform: scale(0.92) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}

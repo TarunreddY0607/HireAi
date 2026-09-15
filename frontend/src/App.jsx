@@ -96,12 +96,17 @@ import Application
 import ProtectedRoute
     from "./utils/ProtectedRoute";
 
+import AppUpdater
+    from "./components/AppUpdater/AppUpdater";
+
 
 function App() {
 
     return (
+        <>
+            <AppUpdater />
 
-        <Routes>
+            <Routes>
 
 
             {/* ==========================================
@@ -536,7 +541,7 @@ function App() {
 
 
         </Routes>
-
+        </>
     );
 
 }
