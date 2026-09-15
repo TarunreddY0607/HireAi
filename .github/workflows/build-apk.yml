@@ -36,7 +36,7 @@ jobs:
 
       - name: Build Web Application
         env:
-          VITE_API_BASE_URL: "http://192.168.68.105:5000"
+          VITE_API_BASE_URL: "https://wife-romp-down.ngrok-free.dev"
         run: |
           cd frontend
           npm run build
@@ -66,9 +66,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.0.1
-          name: "HireAi Android App v1.0.1"
-          body: "Updated Android APK build for HireAi with local network backend support. Download `HireAi.apk` below."
+          tag_name: v1.0.2
+          name: "HireAi Android App v1.0.2"
+          body: "Official Android APK connected to live public backend tunnel (https://wife-romp-down.ngrok-free.dev). Download `HireAi.apk` below."
           files: frontend/android/app/build/outputs/apk/debug/HireAi.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
