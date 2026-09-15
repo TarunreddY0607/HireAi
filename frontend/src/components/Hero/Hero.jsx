@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
-import { FiArrowRight, FiPlay, FiCheck, FiTrendingUp, FiFileText, FiDownloadCloud } from "react-icons/fi";
+import { FiArrowRight, FiPlay, FiCheck, FiTrendingUp, FiFileText } from "react-icons/fi";
 import api from "../../services/api";
-import { useAppVersion } from "../../hooks/useAppVersion";
 
 function Hero() {
     const navigate = useNavigate();
-    const { currentVersion, latestVersion, hasUpdate, downloadUrl } = useAppVersion();
 
     const [stats, setStats] = useState({
         totalRegistered: 0,
@@ -44,26 +42,11 @@ function Hero() {
             <div className="hero-container">
                 {/* ── LEFT HERO COLUMN ─────────── */}
                 <div className="hero-left">
-                    {/* Super Prominent Version Status Bar */}
-                    <div className="hero-version-banner">
-                        <div className="version-banner-left">
-                            <span className="version-pulse-glow"></span>
-                            <span className="version-title-label">SYSTEM VERSION:</span>
-                            <span className="version-val-badge">Installed: <strong>{currentVersion}</strong></span>
-                            <span className="version-sep-dot">•</span>
-                            <span className="version-val-badge">Latest: <strong>{latestVersion}</strong></span>
-                        </div>
-                        <div className="version-banner-right">
-                            {hasUpdate ? (
-                                <a href={downloadUrl} target="_blank" rel="noreferrer" className="version-banner-update-btn">
-                                    <FiDownloadCloud /> New Update Available ({latestVersion}) 🚀
-                                </a>
-                            ) : (
-                                <span className="version-synced-pill">
-                                    ✓ All Systems Synced (Latest)
-                                </span>
-                            )}
-                        </div>
+                    {/* Top Pill Badge */}
+                    <div className="hero-badge">
+                        <span className="badge-glow-dot"></span>
+                        <HiSparkles className="badge-sparkle" />
+                        <span>Next-Gen AI Talent Engine</span>
                     </div>
 
                     {/* Main Headline */}

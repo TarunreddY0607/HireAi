@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 // Dynamic app build version
-export const CURRENT_APP_VERSION = import.meta.env.VITE_APP_VERSION || "1.0.5";
+export const CURRENT_APP_VERSION = import.meta.env.VITE_APP_VERSION || "1.0.6";
 
 function AppUpdater() {
     useEffect(() => {

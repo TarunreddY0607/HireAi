@@ -191,9 +191,9 @@
 
 .footer-bottom-left {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .footer-bottom p {
@@ -292,5 +292,6 @@
     .footer { padding: 60px 6% 24px; }
     .footer-container { grid-template-columns: 1fr; gap: 32px; }
     .footer-about p { max-width: 100%; }
-    .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
+    .footer-bottom-left { align-items: center; text-align: center; }
 }
