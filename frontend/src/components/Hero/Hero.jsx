@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
-import { FiArrowRight, FiPlay, FiCheck, FiTrendingUp, FiFileText } from "react-icons/fi";
+import { FiArrowRight, FiPlay, FiCheck, FiTrendingUp, FiFileText, FiDownloadCloud } from "react-icons/fi";
 import api from "../../services/api";
+import { useAppVersion } from "../../hooks/useAppVersion";
 
 function Hero() {
     const navigate = useNavigate();
+    const { currentVersion, latestVersion, hasUpdate, downloadUrl } = useAppVersion();
 
     const [stats, setStats] = useState({
         totalRegistered: 0,
@@ -42,11 +44,27 @@ function Hero() {
             <div className="hero-container">
                 {/* ── LEFT HERO COLUMN ─────────── */}
                 <div className="hero-left">
-                    {/* Top Pill Badge */}
-                    <div className="hero-badge">
-                        <span className="badge-glow-dot"></span>
-                        <HiSparkles className="badge-sparkle" />
-                        <span>Next-Gen AI Talent Engine</span>
+                    {/* Top Pill Badges Row */}
+                    <div className="hero-badges-wrapper">
+                        <div className="hero-badge">
+                            <span className="badge-glow-dot"></span>
+                            <HiSparkles className="badge-sparkle" />
+                            <span>Next-Gen AI Talent Engine</span>
+                        </div>
+
+                        <div className={`hero-version-badge ${hasUpdate ? 'has-update' : 'is-synced'}`}>
+                            <span className="version-status-dot"></span>
+                            <span className="version-tag">Your App: <strong>{currentVersion}</strong></span>
+                            <span className="version-divider">•</span>
+                            <span className="version-tag">Latest: <strong>{latestVersion}</strong></span>
+                            {hasUpdate ? (
+                                <a href={downloadUrl} target="_blank" rel="noreferrer" className="version-action-btn">
+                                    <FiDownloadCloud /> Update 🚀
+                                </a>
+                            ) : (
+                                <span className="version-status-tag">✓ Up to date</span>
+                            )}
+                        </div>
                     </div>
 
                     {/* Main Headline */}

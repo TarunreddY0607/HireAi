@@ -4,11 +4,13 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import { FiArrowRight } from "react-icons/fi";
+import { useAppVersion } from "../../hooks/useAppVersion";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { currentVersion, latestVersion, hasUpdate } = useAppVersion();
 
   const close = () => setMenuOpen(false);
 
@@ -48,7 +50,11 @@ function Navbar() {
           <span className="brand-logo-text">
             Hire<span className="brand-logo-gradient">AI</span>
           </span>
-          <span className="brand-version-pill">PLATFORM</span>
+          <span className={`brand-version-pill ${hasUpdate ? 'brand-version-update' : ''}`} title={`Installed: ${currentVersion} • Latest: ${latestVersion}`}>
+            <span className="nav-version-dot"></span>
+            <span className="nav-version-text">{currentVersion}</span>
+            <span className="nav-latest-badge">Latest: {latestVersion}</span>
+          </span>
         </a>
 
         {/* ── Nav Links ─────────────────────────── */}

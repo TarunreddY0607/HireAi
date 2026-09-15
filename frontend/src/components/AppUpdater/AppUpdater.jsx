@@ -4,7 +4,7 @@ import { HiSparkles } from "react-icons/hi2";
 import { FiDownloadCloud, FiArrowRight } from "react-icons/fi";
 
 // Dynamic app build version
-export const CURRENT_APP_VERSION = import.meta.env.VITE_APP_VERSION || "1.0.3";
+export const CURRENT_APP_VERSION = import.meta.env.VITE_APP_VERSION || "1.0.4";
 
 function AppUpdater() {
     const [updateInfo, setUpdateInfo] = useState(null);

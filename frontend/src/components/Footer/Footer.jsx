@@ -5,8 +5,11 @@ import {
 } from "react-icons/fa";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { HiSparkles } from "react-icons/hi2";
+import { useAppVersion } from "../../hooks/useAppVersion";
 
 function Footer() {
+    const { currentVersion, latestVersion, hasUpdate, downloadUrl } = useAppVersion();
+
     return (
         <footer className="footer" id="contact">
             <div className="footer-container">
@@ -68,7 +71,22 @@ function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <p>© {new Date().getFullYear()} HireAI Platform Inc. All rights reserved.</p>
+                <div className="footer-bottom-left">
+                    <p>© {new Date().getFullYear()} HireAI Platform Inc. All rights reserved.</p>
+                    <div className={`footer-version-tag ${hasUpdate ? 'has-update' : 'is-synced'}`}>
+                        <span className="footer-version-dot"></span>
+                        <span>App: <strong>{currentVersion}</strong></span>
+                        <span>•</span>
+                        <span>Latest: <strong>{latestVersion}</strong></span>
+                        {hasUpdate ? (
+                            <a href={downloadUrl} target="_blank" rel="noreferrer" className="footer-update-link">
+                                Update 🚀
+                            </a>
+                        ) : (
+                            <span className="footer-synced-pill">✓ Synced</span>
+                        )}
+                    </div>
+                </div>
                 <div className="footer-bottom-links">
                     <span>Privacy Policy</span>
                     <span>•</span>
