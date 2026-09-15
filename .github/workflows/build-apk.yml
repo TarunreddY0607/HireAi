@@ -38,6 +38,8 @@ jobs:
           npm install --legacy-peer-deps
 
       - name: Build Web Application
+        env:
+          VITE_API_BASE_URL: "http://192.168.68.105:5000"
         run: |
           cd frontend
           npm run build
@@ -63,13 +65,13 @@ jobs:
           name: HireAi-Android-App
           path: frontend/android/app/build/outputs/apk/debug/HireAi.apk
 
-      - name: Create Public GitHub Release
+      - name: Create or Update Public GitHub Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.0.0
-          name: "HireAi Android App v1.0.0"
-          body: "Official Android APK build for HireAi. Download `HireAi.apk` below and install on any Android device."
+          tag_name: v1.0.1
+          name: "HireAi Android App v1.0.1"
+          body: "Updated Android APK build for HireAi with local network backend support. Download `HireAi.apk` below."
           files: frontend/android/app/build/outputs/apk/debug/HireAi.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
