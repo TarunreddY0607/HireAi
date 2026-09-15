@@ -53,9 +53,30 @@ function FaceCamera({ onLookAwayTimeout }) {
                 }}>
                     <span style={{ fontSize: 32, marginBottom: 8 }}>📷</span>
                     <strong style={{ fontSize: 13, marginBottom: 4 }}>Camera Access Required</strong>
-                    <p style={{ fontSize: 11.5, margin: 0, color: "#b91c1c" }}>
-                        Please allow camera permissions in your mobile browser or open on https:// or localhost.
+                    <p style={{ fontSize: 11.5, margin: "0 0 10px 0", color: "#b91c1c" }}>
+                        Please allow camera permissions to enable AI proctoring and face tracking.
                     </p>
+                    <button 
+                        onClick={() => {
+                            setCameraError(false);
+                            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                                navigator.mediaDevices.getUserMedia({ video: true })
+                                    .then(() => setCameraError(false))
+                                    .catch(() => setCameraError(true));
+                            }
+                        }}
+                        style={{
+                            padding: "6px 14px",
+                            background: "#dc2626",
+                            color: "#ffffff",
+                            borderRadius: 8,
+                            fontSize: 12,
+                            fontWeight: 700,
+                            cursor: "pointer"
+                        }}
+                    >
+                        📷 Enable Camera
+                    </button>
                 </div>
             ) : (
                 <Webcam

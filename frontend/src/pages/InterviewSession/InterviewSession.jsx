@@ -1574,13 +1574,32 @@ function InterviewSession() {
                         </h2>
 
                         <p>
-
                             {
                                 current?.question
                             }
-
                         </p>
 
+                        <button
+                            type="button"
+                            className="speak-question-btn"
+                            onClick={() => speakQuestion(current?.question)}
+                            style={{
+                                marginTop: 12,
+                                padding: "7px 16px",
+                                background: "#eff6ff",
+                                border: "1px solid #bfdbfe",
+                                borderRadius: 20,
+                                color: "#2563eb",
+                                fontSize: 13,
+                                fontWeight: 600,
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: 6,
+                                cursor: "pointer"
+                            }}
+                        >
+                            🔊 Read Question Out Loud
+                        </button>
                     </div>
 
 

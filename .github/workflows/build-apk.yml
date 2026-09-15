@@ -37,7 +37,7 @@ jobs:
       - name: Build Web Application
         env:
           VITE_API_BASE_URL: "https://wife-romp-down.ngrok-free.dev"
-          VITE_APP_VERSION: "1.0.3"
+          VITE_APP_VERSION: "1.0.4"
         run: |
           cd frontend
           npm run build
@@ -67,9 +67,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
         with:
-          tag_name: v1.0.3
-          name: "HireAi Android App v1.0.3"
-          body: "HireAi Android APK with In-App Auto-Updater and enhanced mobile responsive UI. Download `HireAi.apk` below."
+          tag_name: v1.0.4
+          name: "HireAi Android App v1.0.4"
+          body: "HireAi v1.0.4: Fixed Android camera and microphone permissions, enhanced AI speech synthesis and question voice reader, and streamlined answer submission."
           files: frontend/android/app/build/outputs/apk/debug/HireAi.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
