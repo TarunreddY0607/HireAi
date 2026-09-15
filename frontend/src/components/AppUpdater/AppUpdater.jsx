@@ -3,18 +3,18 @@ import "./AppUpdater.css";
 import { HiSparkles } from "react-icons/hi2";
 import { FiDownloadCloud, FiArrowRight } from "react-icons/fi";
 
-// Current installed application build version
-export const CURRENT_APP_VERSION = "1.0.2";
+// Dynamic app build version
+export const CURRENT_APP_VERSION = import.meta.env.VITE_APP_VERSION || "1.0.3";
 
 function AppUpdater() {
     const [updateInfo, setUpdateInfo] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        // Run check 2.5s after app mount
+        // Run check 3s after app mount
         const timer = setTimeout(() => {
             checkForUpdate();
-        }, 2500);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -34,9 +34,16 @@ function AppUpdater() {
             const cleanLatest = latestTag.replace(/^v/, "").trim();
             const cleanCurrent = CURRENT_APP_VERSION.replace(/^v/, "").trim();
 
-            // Check if dismissed in this browser/app session
-            const dismissed = sessionStorage.getItem(`dismissed_update_${latestTag}`);
-            if (dismissed === "true") return;
+            // Check if user already updated or snoozed this version
+            const snoozedTime = localStorage.getItem(`snoozed_update_${latestTag}`);
+            if (snoozedTime && Date.now() - Number(snoozedTime) < 24 * 60 * 60 * 1000) {
+                return; // Don't prompt again for 24 hours if snoozed
+            }
+
+            const installed = localStorage.getItem("updated_to_version");
+            if (installed === cleanLatest) {
+                return;
+            }
 
             // Compare versions (semver style)
             if (isNewerVersion(cleanLatest, cleanCurrent)) {
@@ -50,6 +57,7 @@ function AppUpdater() {
 
                 setUpdateInfo({
                     version: latestTag,
+                    cleanVersion: cleanLatest,
                     notes: release.body || "New features, performance enhancements, and UI design improvements.",
                     downloadUrl: downloadUrl
                 });
@@ -73,6 +81,9 @@ function AppUpdater() {
     };
 
     const handleUpdateNow = () => {
+        if (updateInfo?.cleanVersion) {
+            localStorage.setItem("updated_to_version", updateInfo.cleanVersion);
+        }
         if (updateInfo?.downloadUrl) {
             window.open(updateInfo.downloadUrl, "_system");
         }
@@ -81,7 +92,7 @@ function AppUpdater() {
 
     const handleLater = () => {
         if (updateInfo?.version) {
-            sessionStorage.setItem(`dismissed_update_${updateInfo.version}`, "true");
+            localStorage.setItem(`snoozed_update_${updateInfo.version}`, String(Date.now()));
         }
         setIsOpen(false);
     };
