@@ -44,25 +44,24 @@ function Hero() {
             <div className="hero-container">
                 {/* ── LEFT HERO COLUMN ─────────── */}
                 <div className="hero-left">
-                    {/* Top Pill Badges Row */}
-                    <div className="hero-badges-wrapper">
-                        <div className="hero-badge">
-                            <span className="badge-glow-dot"></span>
-                            <HiSparkles className="badge-sparkle" />
-                            <span>Next-Gen AI Talent Engine</span>
+                    {/* Super Prominent Version Status Bar */}
+                    <div className="hero-version-banner">
+                        <div className="version-banner-left">
+                            <span className="version-pulse-glow"></span>
+                            <span className="version-title-label">SYSTEM VERSION:</span>
+                            <span className="version-val-badge">Installed: <strong>{currentVersion}</strong></span>
+                            <span className="version-sep-dot">•</span>
+                            <span className="version-val-badge">Latest: <strong>{latestVersion}</strong></span>
                         </div>
-
-                        <div className={`hero-version-badge ${hasUpdate ? 'has-update' : 'is-synced'}`}>
-                            <span className="version-status-dot"></span>
-                            <span className="version-tag">Your App: <strong>{currentVersion}</strong></span>
-                            <span className="version-divider">•</span>
-                            <span className="version-tag">Latest: <strong>{latestVersion}</strong></span>
+                        <div className="version-banner-right">
                             {hasUpdate ? (
-                                <a href={downloadUrl} target="_blank" rel="noreferrer" className="version-action-btn">
-                                    <FiDownloadCloud /> Update 🚀
+                                <a href={downloadUrl} target="_blank" rel="noreferrer" className="version-banner-update-btn">
+                                    <FiDownloadCloud /> New Update Available ({latestVersion}) 🚀
                                 </a>
                             ) : (
-                                <span className="version-status-tag">✓ Up to date</span>
+                                <span className="version-synced-pill">
+                                    ✓ All Systems Synced (Latest)
+                                </span>
                             )}
                         </div>
                     </div>
