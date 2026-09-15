@@ -1,5 +1,5 @@
 /* =========================================
-   RECRUITER SIDEBAR (SCOPED)
+   RECRUITER SIDEBAR (SCOPED & RESPONSIVE)
    ========================================= */
 
 .recruiter-sidebar {
@@ -8,50 +8,50 @@
     height: 100vh;
     position: sticky;
     top: 0;
-    background: #11182f;
+    background: #0f172a;
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 24px 20px;
+    padding: 24px 16px;
     box-sizing: border-box;
     flex-shrink: 0;
-    z-index: 10;
-    overflow: hidden;
+    z-index: 100;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* =========================================
    LOGO
    ========================================= */
-
 .recruiter-sidebar .sidebar-logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 4px 8px 32px;
+    padding: 4px 8px 24px;
     flex-shrink: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 16px;
 }
 
 .recruiter-sidebar .sidebar-logo svg {
-    font-size: 30px;
-    color: #4f7cff;
+    font-size: 26px;
+    color: #38bdf8;
 }
 
 .recruiter-sidebar .sidebar-logo h2 {
     margin: 0;
     color: #ffffff;
-    font-size: 27px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
     letter-spacing: -0.5px;
 }
 
 /* =========================================
    NAVIGATION
    ========================================= */
-
 .recruiter-sidebar .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     flex: 1;
     min-height: 0;
 }
@@ -59,106 +59,112 @@
 /* =========================================
    SIDEBAR ITEMS
    ========================================= */
-
 .recruiter-sidebar .sidebar-item {
     width: 100%;
-    height: 56px;
+    height: 48px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 0 18px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    color: #d7dcef;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.recruiter-sidebar .sidebar-item svg {
-    width: 20px;
-    min-width: 20px;
-    font-size: 19px;
-}
-
-/* Hover */
-.recruiter-sidebar .sidebar-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-}
-
-/* Active */
-.recruiter-sidebar .sidebar-item.active {
-    background: #4169e1;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(65, 105, 225, 0.25);
-}
-
-/* =========================================
-   LOGOUT
-   ========================================= */
-
-.recruiter-sidebar .logout-btn {
-    width: 100%;
-    height: 52px;
-    margin-top: 20px;
-    flex-shrink: 0;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.07);
-    color: #d7dcef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 12px;
-    font-size: 15px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: #94a3b8;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.recruiter-sidebar .logout-btn svg {
+.recruiter-sidebar .sidebar-item svg {
+    width: 18px;
     font-size: 17px;
+    flex-shrink: 0;
 }
 
-.recruiter-sidebar .logout-btn:hover {
-    background: rgba(239, 68, 68, 0.15);
-    color: #ff6b6b;
+.recruiter-sidebar .sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.recruiter-sidebar .sidebar-item.active {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 /* =========================================
-   MOBILE
+   LOGOUT
    ========================================= */
+.recruiter-sidebar .logout-btn {
+    width: 100%;
+    height: 44px;
+    margin-top: 16px;
+    flex-shrink: 0;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
 
-@media (max-width: 700px) {
+.recruiter-sidebar .logout-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 850px) {
     .recruiter-sidebar {
-        width: 80px;
-        min-width: 80px;
-        padding: 20px 10px;
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px 14px;
     }
 
     .recruiter-sidebar .sidebar-logo {
-        justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
     }
 
-    .recruiter-sidebar .sidebar-logo h2 {
-        display: none;
+    .recruiter-sidebar .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
     }
 
     .recruiter-sidebar .sidebar-item {
-        justify-content: center;
-        padding: 0;
-        gap: 0;
+        width: auto;
+        height: 38px;
+        padding: 0 14px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 12.5px;
     }
 
     .recruiter-sidebar .sidebar-item span {
-        display: none;
+        display: inline-block;
     }
 
-    .recruiter-sidebar .logout-btn span {
-        display: none;
+    .recruiter-sidebar .logout-btn {
+        margin-top: 8px;
+        height: 36px;
+        border-radius: 20px;
     }
 }
